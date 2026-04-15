@@ -1,5 +1,4 @@
 class Composante:
-    
-    pass # à enlever
-
-    # TODO: Compléter la classe
+    def __init__(self,nom,poids):
+        self.__nom = nom
+        self.__poids = poids

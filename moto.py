@@ -6,7 +6,25 @@ from moteur import Moteur
 from chassis import Chassis
 
 class Moto(Vehicule):
-
-    pass # à enlever 
-
-    # TODO : Compléter la classe
+    def __init__(self, nom, position_dep, image_path):
+        roues = [Roue(
+            MotoSpecs.roue_nom,
+            MotoSpecs.roue_poids,
+            MotoSpecs.roue_friction,
+            MotoSpecs.roue_support
+        )
+        for i in range (2)
+        ]
+        moteur = Moteur(
+            MotoSpecs.moteur_nom,
+            MotoSpecs.moteur_poids,
+            MotoSpecs.moteur_acceleration
+        )
+        chassis = Chassis(
+            MotoSpecs.chassis_nom,
+            MotoSpecs.chassis_poids,
+            MotoSpecs.chassis_aire,
+            MotoSpecs.chassis_trainee
+        )
+        super().__init__(nom, position_dep, roues, moteur, chassis, MotoSpecs, image_path)
+        
